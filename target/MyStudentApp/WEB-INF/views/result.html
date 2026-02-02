@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+    <body>
+        <h2>Student Results</h2>
+
+        <p>Name: <span th:text="${student.name}">Name Here</span></p>
+        <p>Marks: <span th:text="${student.marks}"></span></p>
+
+        <p> Grade: <strong th:text="${student.grade}">GRADE</strong></p>
+    
+
+    <div th:if="${student.grade == 'PASS'}">
+        <h3 style= "color: green;">Congratualations! You have passed the test.</h3>
+    </div>
+
+    <div th:unless="${student.grade == 'PASS'}">
+        <h3 style = "color: red;">
+            Please try again. Better luck next time!
+        </h3>
+    </div>
+
+    <br/>
+    <a th:href="@{/entry}"> Back to Form</a>
+        
+    </div>
+    </body>
+
+    </html>

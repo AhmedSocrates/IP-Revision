@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Playground</title>
+    <style>
+        .pass { color: green; font-weight: bold; }
+        .fail { color: red; font-style: italic; }
+        .box { border: 1px solid black; padding: 10px; margin: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Thymeleaf "Cheat Sheet"</h1>
+    <div class="box">
+        <h2>1. Display Text</h2>
+        <p> Standard Text (th:text) <span th:text = "${htmlMsg}"></span></p>
+            <p> Unescaped Text (th:utext) <span th:utext = "${htmlMsg}"></span></p>
+    </div>
+
+    <div class="box">
+        <h2>2. If/Unless</h2>
+        <p th:if="${isAdmin}"> You are an admin</p>
+        <p th:if="${isStudent}" >You are a Student.</p>
+
+        <p th:unless="${isStudent}"> You are not an student</p>
+
+    </div>
+
+    <div class="box">
+        <h2>3. Switch/Case</h2>
+        <div th:switch="${role}">
+            <p th:case="'Admin'"> You are admin</p>
+            <p th:case="'MANAGER'"> You are a manager </p>
+            <p th:case="*"> User is a Guest</p> 
+
+        </div>
+    </div>
+
+    <div class="box">
+        <h2> 4. Loops </h2>
+        <ul>
+            <li th:each="Fruit, stat : ${Fruits}">
+                Index: <span th:text="${stat.index}"></span> | 
+                Name: <span th:text="${Fruit}"></span>
+            </li>
+        </ul>
+    </div>
+
+    <div class = "box">
+        <h2> 5. Dynamic Links</h2>
+        <a th:href="@{/profile/{id}(id=${userID})}"> View Profile</a>
+    </div>
+
+    <div class="box">
+        <h2>6. Dynamic CSS</h2>
+        <p th:class="${socre>50}?'pass':'fail'">
+            This text changes color based on the score
+        </p>
+    </div>
