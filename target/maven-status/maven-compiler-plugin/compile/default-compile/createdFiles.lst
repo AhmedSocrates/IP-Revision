@@ -1,4 +1,7 @@
-Controlers\StudentController.class
-DAOs\StudentDAO.class
+DAOs\StudenDAO2.class
 Models\Student.class
+Configuration\DatabaseConfig.class
 Controlers\SimpleController.class
+Controlers\StudentController.class
+Configuration\SecurityConfig.class
+DAOs\StudentDAO.class
