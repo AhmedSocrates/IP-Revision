@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class DatabaseConfig {
     @Bean 
     public DataSource dataSource(){
-        DataSource dataSource = new DriverManagerDataSource();
+        DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource.setUrl("");
         dataSource.setUsername("root");

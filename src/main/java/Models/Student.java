@@ -1,7 +1,32 @@
+//without annotation (For JDBC and Spring JDBC Template
+//With annotation (For Hibernate and JPA)
+
+
 package Models;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+
+@Entity
+@Table(name="student")
 public class Student{
+    
+    /*@Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(name="id");
+    int id;
+    */
+
+    @Column(name="name")
     String name;
+
+    @Column(name="marks")
     double marks;
+    
+    @Column(name="grade")
     String grade;
 
     public Student(){}
